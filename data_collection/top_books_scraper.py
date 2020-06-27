@@ -100,6 +100,7 @@ def get_top_books_data():
             driver.back()
             time.sleep(2.1)
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    driver.quit()
 
     df = pd.DataFrame(data=data_bucket, columns=['rank', 'title','author', 'rating', 'cover', 'num_pages', 'publisher'])
     return df
