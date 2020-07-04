@@ -1,4 +1,5 @@
 
+import re
 
 def convert_rating(rating):
     if x == 'None':
@@ -8,12 +9,14 @@ def convert_rating(rating):
 
 
 #lets create a function that converts all this data to a simple boolean value. 1 if its a hardcover. 0 if its not
-import re
+
 
 def convert_cover_data(cover):
     lower_co = cover.lower()
     if re.match('hardcover', lower_co):
-        return True
+        return int(1)
+    elif re.match('paperback', lower_co):
+        return int(0)
 
 #create a function that converts the values in this columns to an integer
 def convert_num_page_to_int(num_page):
